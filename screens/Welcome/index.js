@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Container, Text } from 'native-base'
 import { Actions } from 'react-native-router-flux'
+import { BackgroundImg } from '../../components'
+import { images } from '../../assets'
 
 class Welcome extends Component {
 
@@ -9,13 +11,11 @@ class Welcome extends Component {
 
     render() {
         return (
-            <Container>
-                <Button
-                    onPress={this.forward}
-                >
-                    <Text>Welcome</Text>
-                </Button>
-            </Container>
+            <BackgroundImg
+                source={images.background}
+            >
+
+            </BackgroundImg>
         )
     }
 }
