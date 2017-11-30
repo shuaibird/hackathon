@@ -3,14 +3,14 @@ import { StyleSheet } from 'react-native'
 import { Button, Icon } from 'native-base'
 import { colors } from '../../../styles'
 
-const CameraButton = ({ onPress }) => {
+const CameraButton = ({ onPress, icon }) => {
     return (
         <Button
             style={styles.button}
             onPress={onPress}
         >
             <Icon
-                name='camera'
+                name={icon}
                 style={styles.buttonIcon}
             />
         </Button>
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.transparent,
     },
     buttonIcon: {
-        fontSize: 100,
+        fontSize: 70,
     },
 })
 
