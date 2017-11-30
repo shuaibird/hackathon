@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet } from 'react-native'
 import { Container } from 'native-base'
 import Camera from 'react-native-camera'
+import { CameraButton } from './parts'
 
 class Capture extends Component {
     render() {
@@ -13,7 +14,9 @@ class Capture extends Component {
                     ref={camera => this.camera = camera}
                     aspect={Camera.constants.Aspect.fill}
                     style={styles.preview}
-                />
+                >
+                    <CameraButton />
+                </Camera>
             </Container>
         )
     }
@@ -22,12 +25,10 @@ class Capture extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: 'row',
     },
     preview: {
         flex: 1,
-        justifyContent: 'flex-end',
-        alignItems: 'center'
+        justifyContent: 'center',
     },
 })
 

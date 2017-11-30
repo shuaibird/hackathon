@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
 import { Button, Icon, Text } from 'native-base'
+import { colors } from '../../../styles'
 
 const ShotButton = ({ onPress }) => {
     return (
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         bottom: 75,
         position: 'absolute',
-        backgroundColor: '#763ab2',
+        backgroundColor: colors.purple,
     },
     text: {
         fontWeight: 'bold',
