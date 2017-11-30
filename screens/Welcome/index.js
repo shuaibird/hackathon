@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { StyleSheet } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import { BackgroundImg } from '../../components'
 import { images } from '../../assets'
@@ -7,8 +6,8 @@ import { ShotButton } from './parts'
 
 class Welcome extends Component {
 
-    forward = () =>
-        Actions.main()
+    start = () =>
+        Actions.capture()
 
     render() {
         return (
@@ -16,13 +15,11 @@ class Welcome extends Component {
                 source={images.background}
             >
                 <ShotButton
+                    onPress={this.start}
                 />
             </BackgroundImg>
         )
     }
 }
-
-const styles = StyleSheet.create({
-})
 
 export default Welcome
