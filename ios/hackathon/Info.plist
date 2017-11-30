@@ -67,5 +67,11 @@
     </array>
     <key>NSCameraUsageDescription</key>
     <string>How does it feel today?</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>It's a beautiful day.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Here we rock!</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>It's a beautiful day.</string>
   </dict>
 </plist>

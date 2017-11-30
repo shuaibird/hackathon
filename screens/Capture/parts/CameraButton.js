@@ -3,10 +3,11 @@ import { StyleSheet } from 'react-native'
 import { Button, Icon } from 'native-base'
 import { colors } from '../../../styles'
 
-const CameraButton = () => {
+const CameraButton = ({ onPress }) => {
     return (
         <Button
             style={styles.button}
+            onPress={onPress}
         >
             <Icon
                 name='camera'
