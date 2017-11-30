@@ -1,4 +1,4 @@
-package com.hackathon;
+package Emo.Shot.666;
 
 import android.app.Application;
 
