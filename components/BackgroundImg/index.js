@@ -1,15 +1,21 @@
 import React from 'react'
 import { Image, StyleSheet } from 'react-native'
+import { Container } from 'native-base'
 
-const BackgroundImg = ({ source, style, children, ...props }) => {
+const BackgroundImg = ({ source, children, style }) => {
     return (
-        <Image
-            source={source}
-            style={[styles.image, style]}
-            {...props}
-        >
-        {children}
-        </Image>
+        <Container>
+            <Image
+                source={source}
+                style={styles.image}
+            >
+            </Image>
+            <Container
+                style={[styles.container, style]}
+            >
+                {children}
+            </Container>
+        </Container>
     )
 }
 
@@ -18,7 +24,14 @@ const styles = StyleSheet.create({
         flex: 1,
         width: null,
         height: null,
-    }
+    },
+    container: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+    },
 })
 
 export default BackgroundImg
