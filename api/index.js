@@ -7,7 +7,7 @@ export const uploadImg = (uri) => {
       name: 'photo.jpg',
       type: 'image/jpg'
   })
-    return fetch(`${host}/images`, {
+    return fetch(`${host}/image`, {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'multipart/form-data',
