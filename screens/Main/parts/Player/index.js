@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { StyleSheet, Image } from 'react-native'
 import { Container, Text } from 'native-base'
-import { colors } from '../../../styles'
+import Rotate from './Rotate'
+import { colors } from '../../../../styles'
 
 class Player extends Component {
     render() {
@@ -12,10 +13,12 @@ class Player extends Component {
                 <Container
                     style={styles.left}
                 >
-                    <Image
-                        style={styles.image}
-                        source={this.props.thumbnail}
-                    />
+                    <Rotate>
+                        <Image
+                            style={styles.image}
+                            source={this.props.thumbnail}
+                        />
+                    </Rotate>
                 </Container>
                 <Container
                     style={styles.right}
