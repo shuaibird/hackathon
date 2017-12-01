@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Container, Text } from 'native-base'
+import { Container } from 'native-base'
 import { connect } from 'react-redux'
-import { Loading } from './parts'
+import { Loading, Player } from './parts'
+import { images } from '../../assets'
 
 class Main extends Component {
     render() {
@@ -10,7 +11,11 @@ class Main extends Component {
                 {
                     this.props.loading ?
                     <Loading /> :
-                    <Text>Main</Text>
+                    <Player
+                        thumbnail={images.background}
+                        title='All Of Me'
+                        artist='Mike'
+                    />
                 }
             </Container>
         )
