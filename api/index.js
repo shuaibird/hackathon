@@ -2,7 +2,7 @@ const host = 'https://sheltered-ridge-96474.herokuapp.com'
 
 export const uploadImg = (uri) => {
     const data = new FormData()
-    data.append('photo', {
+    data.append('file', {
       uri,
       name: 'photo.jpg',
       type: 'image/jpg'
