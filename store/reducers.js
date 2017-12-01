@@ -1,7 +1,6 @@
 import { UPDATE_RESPONSE } from './action-types'
 
 const initialState = {
-    loading: false,
     response: {},
 }
 
