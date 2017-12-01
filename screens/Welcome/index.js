@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Actions } from 'react-native-router-flux'
-import BgImg from './BgImg'
+import { BgImg } from '../../components'
 import ShotButton from './ShotButton'
+import { images } from '../../assets'
 
 class Welcome extends Component {
 
@@ -10,7 +11,7 @@ class Welcome extends Component {
 
     render() {
         return (
-            <BgImg>
+            <BgImg image={images.bgImg}>
                 <ShotButton onPress={this.start} />
             </BgImg>
         )

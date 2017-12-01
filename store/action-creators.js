@@ -12,6 +12,7 @@ export const fetchSong = (img) => {
             })
             Actions.player()
         } catch (err) {
+            console.log(err)
             dispatch({
                 type: UPDATE_RESPONSE,
                 payload: {},

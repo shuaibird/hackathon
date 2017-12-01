@@ -1,13 +1,12 @@
 import React from 'react'
 import { Image, StyleSheet } from 'react-native'
 import { Container } from 'native-base'
-import { images } from '../../assets'
 
-const BackgroundImg = ({ children }) => {
+const BackgroundImg = ({ children, image }) => {
     return (
         <Container>
             <Image
-                source={images.bgImg}
+                source={image}
                 style={styles.image}
             >
             </Image>
