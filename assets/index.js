@@ -1,7 +1,7 @@
 export const images = {
-    background: require('./images/background.jpg'),
+    bgImg: require('./images/bgImg.jpg'),
 }
 
 export const icons = {
-    
+
 }

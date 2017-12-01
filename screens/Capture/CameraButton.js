@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
 import { Button, Icon } from 'native-base'
-import { colors } from '../../../styles'
+import { colors } from '../../styles'
 
 const CameraButton = ({ onPress, icon }) => {
     return (

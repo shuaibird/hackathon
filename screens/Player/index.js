@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { StyleSheet, Image } from 'react-native'
-import { Container, Text } from 'native-base'
-import { colors } from '../../../../styles'
+import { StyleSheet } from 'react-native'
+import { Container } from 'native-base'
+import { connect } from 'react-redux'
+import { colors } from '../../styles'
 import Info from './Info'
 import Lyrics from './Lyrics'
 import Control from './Control'
@@ -57,4 +58,13 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Player
+const mapStateToProps = ({ response } = {}) => {
+    const { artist, img, link, lyrics, title } = response
+    return {
+        info: { img, title, artist },
+        lyrics,
+        link,
+    }
+}
+
+export default connect(mapStateToProps)(Player)

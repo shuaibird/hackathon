@@ -4,8 +4,8 @@ import { Container } from 'native-base'
 import Camera from 'react-native-camera'
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
-import { CameraButton } from './parts'
-import { updateLoading, fetchSong } from '../../store/action-creators'
+import CameraButton from './CameraButton'
+import { fetchSong } from '../../store/action-creators'
 
 class Capture extends Component {
     state = {
@@ -19,11 +19,10 @@ class Capture extends Component {
     }
 
     takePicture = () => {
-        this.refs.camera.capture({ metadata: {} })
+        this.refs.camera.capture()
             .then(({ path } = {}) => {
                 this.props.fetchSong(path)
-                this.props.updateLoading()
-                Actions.main()
+                Actions.loading()
             })
             .catch(err => console.log(err))
     }
@@ -65,7 +64,6 @@ const styles = StyleSheet.create({
 })
 
 const mapActionsToProps = {
-    updateLoading,
     fetchSong,
 }
 

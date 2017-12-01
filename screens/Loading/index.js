@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { StyleSheet } from 'react-native'
 import { Container, Text } from 'native-base'
 import { Bars } from 'react-native-loader'
-import { colors } from '../../../styles'
-import { genQuote } from '../../../utils'
+import { colors } from '../../styles'
+import { genQuote } from '../../utils'
 
 class Loading extends Component {
     state = {

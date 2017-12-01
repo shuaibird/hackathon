@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { ScrollView, StyleSheet, View } from 'react-native'
 import { Text } from 'native-base'
-import { colors } from '../../../../styles'
+import { colors } from '../../styles'
 
 const Lyrics = ({ style, lyrics }) => {
     return (

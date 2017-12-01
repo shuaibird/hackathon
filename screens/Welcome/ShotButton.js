@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
 import { Button, Icon, Text } from 'native-base'
-import { colors } from '../../../styles'
+import { colors } from '../../styles'
 
 const ShotButton = ({ onPress }) => {
     return (

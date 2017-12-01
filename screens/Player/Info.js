@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Image } from 'react-native'
 import { Container, Text } from 'native-base'
-import { colors } from '../../../../styles'
+import { colors } from '../../styles'
 import Rotate from './Rotate'
 
 const Info = ({ info, style }) => {

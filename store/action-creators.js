@@ -1,11 +1,6 @@
-import { UPDATE_LOADING, UPDATE_RESPONSE } from './action-types'
+import { UPDATE_RESPONSE } from './action-types'
+import { Actions } from 'react-native-router-flux'
 import { uploadImg } from '../api'
-
-export const updateLoading = () => {
-    return {
-        type: UPDATE_LOADING,
-    }
-}
 
 export const fetchSong = (img) => {
     return async (dispatch) => {
@@ -15,14 +10,13 @@ export const fetchSong = (img) => {
                 type: UPDATE_RESPONSE,
                 payload: response,
             })
+            Actions.player()
         } catch (err) {
-            console.log(err)
             dispatch({
                 type: UPDATE_RESPONSE,
                 payload: {},
             })
-        } finally {
-            dispatch(updateLoading())
+            Actions.fail()
         }
     }
 }
