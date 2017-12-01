@@ -45,7 +45,6 @@ class Capture extends Component {
                     <CameraButton
                         icon='shuffle'
                         onPress={this.switchCamera}
-
                     />
                 </Camera>
             </Container>
