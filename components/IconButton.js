@@ -1,17 +1,17 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
 import { Button, Icon } from 'native-base'
-import { colors } from '../../styles'
+import { colors } from '../styles'
 
-const CameraButton = ({ onPress, icon }) => {
+const IconButton = ({ onPress, name, size, style }) => {
     return (
         <Button
-            style={styles.button}
+            style={[styles.button, style]}
             onPress={onPress}
         >
             <Icon
-                name={icon}
-                style={styles.buttonIcon}
+                name={name}
+                style={{ fontSize: size }}
             />
         </Button>
     )
@@ -21,9 +21,6 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: colors.transparent,
     },
-    buttonIcon: {
-        fontSize: 70,
-    },
 })
 
-export default CameraButton
+export default IconButton

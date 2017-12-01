@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         justifyContent: 'center',
+        marginTop: 10,
     },
     image: {
         height: 200,
@@ -42,6 +43,7 @@ const styles = StyleSheet.create({
     text: {
         color: colors.white,
         fontSize: 20,
+        backgroundColor: colors.transparent,
     },
     title: {
         marginTop: 30,

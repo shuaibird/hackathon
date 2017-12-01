@@ -4,7 +4,7 @@ import { Container } from 'native-base'
 import Camera from 'react-native-camera'
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
-import CameraButton from './CameraButton'
+import { IconButton } from '../../components'
 import { fetchSong } from '../../store/action-creators'
 
 class Capture extends Component {
@@ -38,12 +38,14 @@ class Capture extends Component {
                     captureTarget={Camera.constants.CaptureTarget.disk}
                     style={styles.preview}
                 >
-                    <CameraButton
-                        icon='camera'
+                    <IconButton
+                        name='camera'
+                        size={70}
                         onPress={this.takePicture}
                     />
-                    <CameraButton
-                        icon='shuffle'
+                <IconButton
+                        name='shuffle'
+                        size={70}
                         onPress={this.switchCamera}
                     />
                 </Camera>

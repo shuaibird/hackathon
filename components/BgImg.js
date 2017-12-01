@@ -2,7 +2,7 @@ import React from 'react'
 import { Image, StyleSheet } from 'react-native'
 import { Container } from 'native-base'
 
-const BackgroundImg = ({ children, image }) => {
+const BackgroundImg = ({ children, image, style }) => {
     return (
         <Container>
             <Image
@@ -11,7 +11,7 @@ const BackgroundImg = ({ children, image }) => {
             >
             </Image>
             <Container
-                style={styles.container}
+                style={[styles.container, style]}
             >
                 {children}
             </Container>

@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
         color: colors.white,
         paddingTop: 5,
         paddingBottom: 5,
+        backgroundColor: colors.transparent,
     }
 })
 export default Lyrics

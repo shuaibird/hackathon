@@ -10,7 +10,7 @@ class Fail extends Component {
     render() {
         return (
             <BgImg image={images.lost}>
-                <Text style={styles.text}>Ooop, WE'VE JUST GOT CAUGHT AT YOUR AMAZE...</Text>
+                <Text style={styles.text}>Ooop, THE SERVER'S JUST GOT CAUGHT AT YOUR AMAZE...</Text>
             </BgImg>
         )
     }

@@ -2,15 +2,19 @@ import React, { Component } from 'react'
 import { StyleSheet } from 'react-native'
 import { Container } from 'native-base'
 import { connect } from 'react-redux'
+import { BgImg } from '../../components'
 import { colors } from '../../styles'
+import { images } from '../../assets'
 import Info from './Info'
 import Lyrics from './Lyrics'
 import Control from './Control'
 
 class Player extends Component {
+
     render() {
         return (
-            <Container
+            <BgImg
+                image={images.player}
                 style={styles.container}
             >
                 <Container
@@ -32,18 +36,17 @@ class Player extends Component {
                         link={this.props.link}
                     />
                 </Container>
-            </Container>
+            </BgImg>
         )
     }
 }
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: colors.megenta,
-        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, .7)',
     },
     top: {
-        flex: 100000,
+        flex: 4,
         flexDirection: 'row',
         alignItems: 'center',
     },

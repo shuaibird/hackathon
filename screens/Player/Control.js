@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { StyleSheet } from 'react-native'
-import { Container, Icon } from 'native-base'
+import { Container } from 'native-base'
 import streamer from 'react-native-audio-streamer'
+import { IconButton } from '../../components'
 
 class Control extends Component {
     componentDidMount() {
@@ -13,21 +14,24 @@ class Control extends Component {
         streamer.play()
 
     pause = () =>
-        steamer.pause()
+        streamer.pause()
 
     render() {
         return (
             <Container
                 style={styles.container}
             >
-                {/*<Icon
+                <IconButton
                     name='play'
-                    style={styles.icon}
+                    size={30}
+                    onPress={this.play}
+                    style={{ marginRight: 45 }}
                 />
-                <Icon
+                <IconButton
                     name='pause'
-                    style={styles.icon}
-                />*/}
+                    size={30}
+                    onPress={this.pause}
+                />
             </Container>
         )
     }
@@ -35,12 +39,10 @@ class Control extends Component {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center',
-    },
-    icon: {
-
+        alignItems: 'flex-end',
     },
 })
 
