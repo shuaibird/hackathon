@@ -6,10 +6,10 @@ import { colors } from '../../../../styles'
 const Lyrics = ({ style, lyrics }) => {
     return (
         <ScrollView
-            style={styles.wrapper}
+            style={[styles.wrapper, style]}
         >
             <View
-                style={[styles.container, style]}
+                style={styles.container}
             >
                 {
                     lyrics.map(lyric => {
