@@ -1,27 +1,46 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { StyleSheet } from 'react-native'
 import { Container, Text } from 'native-base'
 import { Bars } from 'react-native-loader'
 import { colors } from '../../../styles'
 import { genQuote } from '../../../utils'
 
-const Loading = () => {
-    return (
-        <Container
-            style={styles.container}
-        >
-            <Text
-                style={styles.text}
+class Loading extends Component {
+    state = {
+        quote: genQuote()
+    }
+
+    componentDidMount() {
+        this.interval = setInterval(() => {
+            this.setState({
+                quote: genQuote()
+            })
+        }, 2000)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval)
+    }
+
+    render() {
+        return (
+            <Container
+                style={styles.container}
             >
-                {genQuote()}
-            </Text>
-            <Bars
-                size={25}
-                color={colors.white}
-            />
-        </Container>
-    )
+                <Text
+                    style={styles.text}
+                >
+                    {this.state.quote}
+                </Text>
+                <Bars
+                    size={25}
+                    color={colors.white}
+                />
+            </Container>
+        )
+    }
 }
+
 
 const styles = StyleSheet.create({
     container: {
