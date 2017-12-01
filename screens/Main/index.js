@@ -1,14 +1,24 @@
 import React, { Component } from 'react'
 import { Container, Text } from 'native-base'
+import { connect } from 'react-redux'
+import { Loading } from './parts'
 
 class Main extends Component {
     render() {
         return (
             <Container>
-                <Text>Main</Text>
+                {
+                    this.props.loading ?
+                    <Loading /> :
+                    <Text>Main</Text>
+                }
             </Container>
         )
     }
 }
 
-export default Main
+const mapStateToProps = ({ loading }) => ({
+    loading,
+})
+
+export default connect(mapStateToProps)(Main)

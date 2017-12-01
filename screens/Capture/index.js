@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native'
 import { Container } from 'native-base'
 import Camera from 'react-native-camera'
 import { connect } from 'react-redux'
+import { Actions } from 'react-native-router-flux'
 import { CameraButton } from './parts'
 import { updateLoading, fetchSong } from '../../store/action-creators'
 
@@ -22,6 +23,7 @@ class Capture extends Component {
             .then(({ path } = {}) => {
                 this.props.fetchSong(path)
                 this.props.updateLoading()
+                Actions.main()
             })
             .catch(err => console.log(err))
     }
