@@ -1,4 +1,4 @@
-const host = 'https://sheltered-ridge-96474.herokuapp.com'
+const host = 'https://polar-badlands-63537.herokuapp.com'
 
 export const uploadImg = (uri) => {
     const data = new FormData()
