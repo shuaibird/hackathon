@@ -12,9 +12,15 @@ class Main extends Component {
                     this.props.loading ?
                     <Loading /> :
                     <Player
-                        thumbnail={images.background}
-                        title='All Of Me'
-                        artist='Mike'
+                        info={{
+                            thumbnail: images.background,
+                            title: 'All Of Me',
+                            artist: 'Mike',
+                        }}
+                        lyrics={[
+                            'line1',
+                            'line2line2line2line2line2line2line2line2line2line2line2',
+                        ]}
                         url='http://fs.open.kugou.com/677b2968c4de31d51c41f36903f6df2c/5a211e84/G013/M04/19/09/rYYBAFUNoi2AdlG7AC48VTPd088072.mp3'
                     />
                 }
