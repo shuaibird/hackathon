@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { StyleSheet } from 'react-native'
 import { Container } from 'native-base'
 import Camera from 'react-native-camera'
+import { connect } from 'react-redux'
 import { CameraButton } from './parts'
+import { updateLoading, fetchSong } from '../../store/action-creators'
 
 class Capture extends Component {
     state = {
@@ -17,7 +19,10 @@ class Capture extends Component {
 
     takePicture = () => {
         this.refs.camera.capture({ metadata: {} })
-            .then(data => console.log(data))
+            .then(({ path } = {}) => {
+                this.props.fetchSong(path)
+                this.props.updateLoading()
+            })
             .catch(err => console.log(err))
     }
 
@@ -29,6 +34,7 @@ class Capture extends Component {
                 <Camera
                     ref='camera'
                     type={Camera.constants.Type[this.state.camera]}
+                    captureTarget={Camera.constants.CaptureTarget.disk}
                     style={styles.preview}
                 >
                     <CameraButton
@@ -56,4 +62,9 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Capture
+const mapActionsToProps = {
+    updateLoading,
+    fetchSong,
+}
+
+export default connect(null, mapActionsToProps)(Capture)

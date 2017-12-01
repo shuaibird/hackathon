@@ -1,4 +1,5 @@
 import { UPDATE_LOADING, UPDATE_RESPONSE } from './action-types'
+import { uploadImg } from '../api'
 
 export const updateLoading = () => {
     return {
@@ -6,17 +7,21 @@ export const updateLoading = () => {
     }
 }
 
-// export const fetchSong = () => {
-//     return async (dispatch) => {
-//         try {
-//             // await ...
-//             dispatch({
-//                 type: UPDATE_RESPONSE,
-//             })
-//         } catch (err) {
-//
-//         } finally {
-//             updateLoading()
-//         }
-//     }
-// }
+export const fetchSong = (img) => {
+    return async (dispatch) => {
+        try {
+            const response = await uploadImg(img)
+            dispatch({
+                type: UPDATE_RESPONSE,
+                payload: response,
+            })
+        } catch (err) {
+            dispatch({
+                type: UPDATE_RESPONSE,
+                payload: err,
+            })
+        } finally {
+            dispatch(updateLoading())
+        }
+    }
+}
