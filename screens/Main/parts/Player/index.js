@@ -4,6 +4,7 @@ import { Container, Text } from 'native-base'
 import { colors } from '../../../../styles'
 import Info from './Info'
 import Lyrics from './Lyrics'
+import Control from './Control'
 
 class Player extends Component {
     render() {
@@ -11,14 +12,25 @@ class Player extends Component {
             <Container
                 style={styles.container}
             >
-                <Info
-                    style={styles.info}
-                    info={this.props.info}
-                />
-                <Lyrics
-                    style={styles.lyrics}
-                    lyrics={this.props.lyrics}
-                />
+                <Container
+                    style={styles.top}
+                >
+                    <Info
+                        style={styles.info}
+                        info={this.props.info}
+                    />
+                    <Lyrics
+                        style={styles.lyrics}
+                        lyrics={this.props.lyrics}
+                    />
+                </Container>
+                <Container
+                    style={styles.bottom}
+                >
+                    <Control
+                        url={this.props.url}
+                    />
+                </Container>
             </Container>
         )
     }
@@ -28,8 +40,14 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.megenta,
         flex: 1,
+    },
+    top: {
+        flex: 100000,
         flexDirection: 'row',
         alignItems: 'center',
+    },
+    bottom: {
+        flex: 1,
     },
     info: {
         flex: 1,
