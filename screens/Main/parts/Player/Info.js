@@ -12,7 +12,7 @@ const Info = ({ info, style }) => {
             <Rotate>
                 <Image
                     style={styles.image}
-                    source={info.thumbnail}
+                    source={{ uri: info.img }}
                 />
             </Rotate>
             <Text

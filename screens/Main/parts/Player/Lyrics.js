@@ -12,10 +12,11 @@ const Lyrics = ({ style, lyrics }) => {
                 style={styles.container}
             >
                 {
-                    lyrics.map(lyric => {
+                    lyrics &&
+                    lyrics.map((lyric, idx) => {
                         return (
                             <Text
-                                key={lyric}
+                                key={idx}
                                 style={styles.line}
                             >
                                 {lyric}

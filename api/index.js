@@ -5,14 +5,23 @@ export const uploadImg = (uri) => {
     data.append('file', {
       uri,
       name: 'photo.jpg',
-      type: 'image/jpg'
-  })
-    return fetch(`${host}/image`, {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'multipart/form-data',
-        },
-        method: 'POST',
-        body: data,
+      type: 'image/jpg',
     })
+    return new Promise((resolve, reject) => {
+        fetch(`${host}/image`, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'multipart/form-data',
+            },
+            method: 'POST',
+            body: data,
+        })
+        .then(res => {
+            return res.json()
+        })
+        .then(data => resolve(data))
+        .catch(err => {
+            reject(err)
+        })
+      })
 }

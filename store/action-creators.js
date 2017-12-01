@@ -16,9 +16,10 @@ export const fetchSong = (img) => {
                 payload: response,
             })
         } catch (err) {
+            console.log(err)
             dispatch({
                 type: UPDATE_RESPONSE,
-                payload: err,
+                payload: {},
             })
         } finally {
             dispatch(updateLoading())

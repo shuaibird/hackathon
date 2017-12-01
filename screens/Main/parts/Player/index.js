@@ -28,7 +28,7 @@ class Player extends Component {
                     style={styles.bottom}
                 >
                     <Control
-                        url={this.props.url}
+                        link={this.props.link}
                     />
                 </Container>
             </Container>
