@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     container: {
         paddingLeft: 30,
         paddingRight: 30,
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
     },
     line: {
